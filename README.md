@@ -24,10 +24,15 @@ or generally manipulate and interact with.
     $post = encode($_POST);
     print_r($post);
     exit(0);
+
 ```
 
 ### Sample Output
 
 ```
+Array
+(
+    [name] => Oliver O&#039;Connor
+)
 
 ```
