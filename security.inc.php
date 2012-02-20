@@ -4,7 +4,7 @@
      * decode
      * 
      * @access public
-     * @param mixed $mixed
+     * @param  mixed $mixed
      * @return mixed
      */
     function decode($mixed)
@@ -22,7 +22,7 @@
      * encode
      * 
      * @access public
-     * @param mixed $mixed
+     * @param  mixed $mixed
      * @return mixed
      */
     function encode($mixed)
@@ -35,4 +35,3 @@
         }
         return htmlentities($mixed, ENT_QUOTES, 'UTF-8', false);
     }
-
