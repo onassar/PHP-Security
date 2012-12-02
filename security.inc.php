@@ -21,10 +21,7 @@
     /**
      * encode
      * 
-     * @example <http://www.amazon.com/dp/B007HCCOD0?country=CA&nav_sdd=aps>
-     * @see     <http://php.net/manual/en/function.iconv.php>
-     * @see     <http://insomanic.me.uk/post/191397106/php-htmlspecialchars-htmlentities-invalid>
-     * @see     <http://stackoverflow.com/questions/11241091/htmlentities-htmlspecialchars-and-invalid-multibyte-sequence>
+     * @see     <http://web.onassar.com/blog/2012/12/02/multibyte-error-with-character-set-encoding/>
      * @access public
      * @param  mixed $mixed
      * @return mixed
@@ -40,7 +37,7 @@
         if (mb_check_encoding($mixed, 'ISO-8859-1')) {
             $mixed = iconv('ISO-8859-1', 'UTF-8', $mixed);
         }
-        return htmlentities($mixed, ENT_QUOTES, "UTF-8", false);
+        return htmlentities($mixed, ENT_QUOTES, 'UTF-8', false);
     }
 
     /**
