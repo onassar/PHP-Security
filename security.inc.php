@@ -21,12 +21,13 @@
     /**
      * encode
      * 
-     * @see     <http://web.onassar.com/blog/2012/12/02/multibyte-error-with-character-set-encoding/>
+     * @see    <http://web.onassar.com/blog/2012/12/02/multibyte-error-with-character-set-encoding/>
      * @access public
      * @param  mixed $mixed
+     * @param  Boolean $doubleEncode (default: false)
      * @return mixed
      */
-    function encode($mixed)
+    function encode($mixed, $doubleEncode = false)
     {
         if (is_array($mixed)) {
             foreach ($mixed as $key => $value) {
@@ -37,7 +38,7 @@
         if (mb_check_encoding($mixed, 'ISO-8859-1')) {
             $mixed = iconv('ISO-8859-1', 'UTF-8', $mixed);
         }
-        return htmlentities($mixed, ENT_QUOTES, 'UTF-8', false);
+        return htmlentities($mixed, ENT_QUOTES, 'UTF-8', $doubleEncode);
     }
 
     /**
