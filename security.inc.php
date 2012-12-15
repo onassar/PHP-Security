@@ -1,6 +1,29 @@
 <?php
 
     /**
+     * convert
+     * 
+     * Converts from one specific encoding to another.
+     * 
+     * @related <http://web.onassar.com/blog/2012/12/02/multibyte-error-with-character-set-encoding/>
+     * @access  public
+     * @param   mixed $mixed
+     * @param   String $from
+     * @param   String $to (default: UTF-8)
+     * @return  mixed
+     */
+    function convert($mixed, $from, $to = 'UTF-8')
+    {
+        if (is_array($mixed)) {
+            foreach ($mixed as $key => $value) {
+                $mixed[$key] = convert($value, $from, $to);
+            }
+            return $mixed;
+        }
+        return mb_convert_encoding($mixed, $to, $from);
+    }
+
+    /**
      * decode
      * 
      * @access public
@@ -21,7 +44,6 @@
     /**
      * encode
      * 
-     * @see    <http://web.onassar.com/blog/2012/12/02/multibyte-error-with-character-set-encoding/>
      * @access public
      * @param  mixed $mixed
      * @param  Boolean $doubleEncode (default: false)
@@ -34,9 +56,6 @@
                 $mixed[$key] = encode($value);
             }
             return $mixed;
-        }
-        if (mb_check_encoding($mixed, 'ISO-8859-1')) {
-            $mixed = iconv('ISO-8859-1', 'UTF-8', $mixed);
         }
         return htmlentities($mixed, ENT_QUOTES, 'UTF-8', $doubleEncode);
     }
