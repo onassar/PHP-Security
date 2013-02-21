@@ -26,6 +26,9 @@
     /**
      * decode
      * 
+     * @see    <http://php.net/manual/en/function.get-html-translation-table.php#73410>
+     * @note   In PHP 5.4.x, can use get_html_translation_table along with
+     *         ENT_HTML5 for more robust decoding (eg. &apos; entity)
      * @access public
      * @param  mixed $mixed
      * @return mixed
@@ -38,7 +41,12 @@
             }
             return $mixed;
         }
-        return html_entity_decode($mixed, ENT_QUOTES, 'UTF-8');
+        $decoded = html_entity_decode($mixed, ENT_QUOTES, 'UTF-8');
+        return str_replace(
+            array('&apos;'),
+            array('\''),
+            $decoded
+        );
     }
 
     /**
