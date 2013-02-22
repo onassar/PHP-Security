@@ -71,7 +71,8 @@
     /**
      * slugify
      * 
-     * Turns a string into a url-friendly string (alphabumeric).
+     * Turns a string into a url-friendly string (alphaumeric), ignoring
+     * non-english characters for now.
      * 
      * @access public
      * @param  String $str
