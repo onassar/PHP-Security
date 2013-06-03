@@ -61,7 +61,7 @@
     {
         if (is_array($mixed)) {
             foreach ($mixed as $key => $value) {
-                $mixed[$key] = encode($value);
+                $mixed[$key] = encode($value, $doubleEncode);
             }
             return $mixed;
         }
