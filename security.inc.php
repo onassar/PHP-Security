@@ -8,8 +8,8 @@
      * @related <http://web.onassar.com/blog/2012/12/02/multibyte-error-with-character-set-encoding/>
      * @access  public
      * @param   mixed $mixed
-     * @param   String $from
-     * @param   String $to (default: UTF-8)
+     * @param   string $from
+     * @param   string $to (default: UTF-8)
      * @return  mixed
      */
     function convert($mixed, $from, $to = 'UTF-8')
@@ -54,10 +54,10 @@
      * 
      * @access public
      * @param  mixed $mixed
-     * @param  Boolean $doubleEncode (default: false)
+     * @param  boolean $doubleEncode (default: true)
      * @return mixed
      */
-    function encode($mixed, $doubleEncode = false)
+    function encode($mixed, $doubleEncode = true)
     {
         if (is_array($mixed)) {
             foreach ($mixed as $key => $value) {
@@ -75,10 +75,10 @@
      * non-english characters for now.
      * 
      * @access public
-     * @param  String $str
-     * @param  Boolean $limit. (default: 100)
-     * @param  Boolean $lowercase. (default: true)
-     * @return String
+     * @param  string $str
+     * @param  boolean $limit. (default: 100)
+     * @param  boolean $lowercase. (default: true)
+     * @return string
      */
     function slugify($str, $limit = 100, $lowercase = true)
     {
