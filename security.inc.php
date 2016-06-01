@@ -69,6 +69,25 @@
     }
 
     /**
+     * encodeURIComponent
+     * 
+     * @see    http://stackoverflow.com/questions/1734250/what-is-the-equivalent-of-javascripts-encodeuricomponent-in-php
+     * @access public
+     * @param  string $str
+     * @return string
+     */
+    function encodeURIComponent($str) {
+        $revert = array(
+            '%21'=>'!',
+            '%2A'=>'*',
+            '%27'=>"'",
+            '%28'=>'(',
+            '%29'=>')'
+        );
+        return strtr(rawurlencode($str), $revert);
+    }
+
+    /**
      * slugify
      * 
      * Turns a string into a url-friendly string (alphaumeric), ignoring
