@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * convert
+     * convertEncoding
      * 
      * Converts from one specific encoding to another.
      * 
@@ -12,7 +12,7 @@
      * @param   string $to (default: UTF-8)
      * @return  mixed
      */
-    function convert($mixed, $from, $to = 'UTF-8')
+    function convertEncoding($mixed, $from, $to = 'UTF-8')
     {
         if (is_array($mixed)) {
             foreach ($mixed as $key => $value) {
