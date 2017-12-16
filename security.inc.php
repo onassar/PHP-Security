@@ -14,7 +14,7 @@
      */
     function convertEncoding($mixed, $from, $to = 'UTF-8')
     {
-        if (is_array($mixed)) {
+        if (is_array($mixed) === true) {
             foreach ($mixed as $key => $value) {
                 $mixed[$key] = convert($value, $from, $to);
             }
@@ -26,16 +26,16 @@
     /**
      * decode
      * 
-     * @see    <http://php.net/manual/en/function.get-html-translation-table.php#73410>
-     * @note   In PHP 5.4.x, can use get_html_translation_table along with
-     *         ENT_HTML5 for more robust decoding (eg. &apos; entity)
-     * @access public
-     * @param  mixed $mixed
-     * @return mixed
+     * @see     http://php.net/manual/en/function.get-html-translation-table.php#73410
+     * @note    In PHP 5.4.x, can use get_html_translation_table along with
+     *          ENT_HTML5 for more robust decoding (eg. &apos; entity)
+     * @access  public
+     * @param   mixed $mixed
+     * @return  mixed
      */
     function decode($mixed)
     {
-        if (is_array($mixed)) {
+        if (is_array($mixed) === true) {
             foreach ($mixed as $key => $value) {
                 $mixed[$key] = decode($value);
             }
@@ -52,14 +52,14 @@
     /**
      * encode
      * 
-     * @access public
-     * @param  mixed $mixed
-     * @param  boolean $doubleEncode (default: true)
-     * @return mixed
+     * @access  public
+     * @param   mixed $mixed
+     * @param   boolean $doubleEncode (default: true)
+     * @return  mixed
      */
     function encode($mixed, $doubleEncode = true)
     {
-        if (is_array($mixed)) {
+        if (is_array($mixed) === true) {
             foreach ($mixed as $key => $value) {
                 $mixed[$key] = encode($value, $doubleEncode);
             }
@@ -71,10 +71,10 @@
     /**
      * encodeURIComponent
      * 
-     * @see    http://stackoverflow.com/questions/1734250/what-is-the-equivalent-of-javascripts-encodeuricomponent-in-php
-     * @access public
-     * @param  string $str
-     * @return string
+     * @see     http://stackoverflow.com/questions/1734250/what-is-the-equivalent-of-javascripts-encodeuricomponent-in-php
+     * @access  public
+     * @param   string $str
+     * @return  string
      */
     function encodeURIComponent($str) {
         $revert = array(
@@ -93,11 +93,11 @@
      * Turns a string into a url-friendly string (alphaumeric), ignoring
      * non-english characters for now.
      * 
-     * @access public
-     * @param  string $str
-     * @param  boolean $limit. (default: 100)
-     * @param  boolean $lowercase. (default: true)
-     * @return string
+     * @access  public
+     * @param   string $str
+     * @param   boolean $limit. (default: 100)
+     * @param   boolean $lowercase. (default: true)
+     * @return  string
      */
     function slugify($str, $limit = 100, $lowercase = true)
     {
