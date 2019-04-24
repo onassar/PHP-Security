@@ -54,7 +54,7 @@
      * 
      * @access  public
      * @param   mixed $mixed
-     * @param   boolean $doubleEncode (default: true)
+     * @param   bool $doubleEncode (default: true)
      * @return  mixed
      */
     function encode($mixed, $doubleEncode = true)
@@ -95,8 +95,8 @@
      * 
      * @access  public
      * @param   string $str
-     * @param   boolean $limit. (default: 100)
-     * @param   boolean $lowercase. (default: true)
+     * @param   bool $limit. (default: 100)
+     * @param   bool $lowercase. (default: true)
      * @return  string
      */
     function slugify($str, $limit = 100, $lowercase = true)
