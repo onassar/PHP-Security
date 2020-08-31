@@ -13,18 +13,15 @@ or generally manipulate and interact with.
 ### Sample Encoding
 
 ``` php
-<?php
+// sample posted data
+$_POST = array(
+    "name" => "Oliver O'Connor"
+);
 
-    // sample posted data
-    $_POST = array(
-        "name" => "Oliver O'Connor"
-    );
-
-    // secure and display
-    $post = encode($_POST);
-    print_r($post);
-    exit(0);
-
+// secure and display
+$post = encode($_POST);
+print_r($post);
+exit(0);
 ```
 
 ### Sample Output
