@@ -90,8 +90,8 @@
     /**
      * slugify
      * 
-     * Turns a string into a url-friendly string (alphaumeric), ignoring
-     * non-english characters for now.
+     * Turns a string into a URL-friendly string (alphanumeric), ignoring
+     * non-english characters (for now).
      * 
      * @access  public
      * @param   string $str
